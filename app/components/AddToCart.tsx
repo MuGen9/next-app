@@ -1,14 +1,12 @@
-'use client';
 import React from 'react';
 
-const AddToCart = () => {
+interface ChildProps {
+  incrementParentState: () => void;
+}
+
+const AddToCart: React.FC<ChildProps> = ({ incrementParentState }) => {
   return (
-    <button
-      className='btn btn-primary'
-      onClick={() => {
-        console.log('click');
-      }}
-    >
+    <button className='btn btn-primary' onClick={incrementParentState}>
       Add to Cart
     </button>
   );
